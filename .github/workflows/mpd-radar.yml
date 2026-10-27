@@ -32,7 +32,7 @@ jobs:
           mkdir -p site
           cp index.html site/index.html
           cp apple-touch-icon.png favicon.png icon-512.png site/
-
+          if [ -f pesca-data.json ]; then cp pesca-data.json site/; fi
       - name: Calcular indicadores MPD
         env:
           TWELVE_DATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
