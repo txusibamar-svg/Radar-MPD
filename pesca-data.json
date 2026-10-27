@@ -1,0 +1,104 @@
+{
+  "schema": 2,
+  "fecha": "2026-10-27T09:46:16.603696+00:00",
+  "source": "Twelve Data",
+  "mar": "SMH",
+  "fase": "recuperacion",
+  "seleccion": [
+    "NVDA",
+    "AVGO",
+    "AMD"
+  ],
+  "ballenas": [
+    {
+      "symbol": "NVDA",
+      "rol": "líder",
+      "status": "Evaluación relativa disponible",
+      "periodos": {
+        "5d": {
+          "vs_mar": 5,
+          "vs_spy": 5,
+          "tendencia": "supera al mar"
+        },
+        "1m": {
+          "vs_mar": 8,
+          "vs_spy": 4,
+          "tendencia": "supera al mar"
+        },
+        "3m": {
+          "vs_mar": 8,
+          "vs_spy": 8,
+          "tendencia": "supera al mar"
+        },
+        "fecha_cotizacion": "2026-10-26"
+      },
+      "BEC": null,
+      "NRR": null,
+      "ICP": null,
+      "POT": null,
+      "punto_dulce": null,
+      "veredicto": "Vigilar; requiere valoración y confirmación técnica"
+    },
+    {
+      "symbol": "AVGO",
+      "rol": "líder",
+      "status": "Evaluación relativa disponible",
+      "periodos": {
+        "5d": {
+          "vs_mar": 5,
+          "vs_spy": 4,
+          "tendencia": "similar al mar"
+        },
+        "1m": {
+          "vs_mar": 7,
+          "vs_spy": 2,
+          "tendencia": "supera al mar"
+        },
+        "3m": {
+          "vs_mar": 1,
+          "vs_spy": 1,
+          "tendencia": "rezagada frente al mar"
+        },
+        "fecha_cotizacion": "2026-10-26"
+      },
+      "BEC": null,
+      "NRR": null,
+      "ICP": null,
+      "POT": null,
+      "punto_dulce": null,
+      "veredicto": "Vigilar; requiere valoración y confirmación técnica"
+    },
+    {
+      "symbol": "AMD",
+      "rol": "rezagada",
+      "status": "Evaluación relativa disponible",
+      "periodos": {
+        "5d": {
+          "vs_mar": 5,
+          "vs_spy": 4,
+          "tendencia": "similar al mar"
+        },
+        "1m": {
+          "vs_mar": 3,
+          "vs_spy": 1,
+          "tendencia": "rezagada frente al mar"
+        },
+        "3m": {
+          "vs_mar": 10,
+          "vs_spy": 10,
+          "tendencia": "supera al mar"
+        },
+        "fecha_cotizacion": "2026-10-26"
+      },
+      "BEC": null,
+      "NRR": null,
+      "ICP": null,
+      "POT": null,
+      "punto_dulce": null,
+      "veredicto": "Vigilar; requiere valoración y confirmación técnica"
+    }
+  ],
+  "errores": {},
+  "valido": true,
+  "nota": "Comparaciones publicadas como tramos orientativos; no se redistribuyen cotizaciones ni retornos exactos. No es una recomendación."
+}
