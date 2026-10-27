@@ -1,0 +1,74 @@
+name: MPD Pesca del día - 3 ballenas
+
+on:
+  workflow_dispatch:
+    inputs:
+      mar:
+        description: 'ETF del mar'
+        type: choice
+        required: true
+        options:
+          - XLK
+          - SMH
+          - XLV
+          - XLI
+          - XLE
+          - XLF
+          - XLY
+          - XLP
+          - XLU
+          - HACK
+      fase:
+        description: 'Extendido: 1+2 / Recuperación: 2+1'
+        type: choice
+        required: true
+        options:
+          - extendido
+          - recuperacion
+      ballena_1:
+        description: 'Ticker de la primera ballena'
+        required: true
+        type: string
+      ballena_2:
+        description: 'Ticker de la segunda ballena'
+        required: true
+        type: string
+      ballena_3:
+        description: 'Ticker de la tercera ballena'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mpd-pesca-manual
+  cancel-in-progress: false
+
+jobs:
+  pesca:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Consultar mar, SPY y 3 ballenas
+        env:
+          TWELVE_DATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+          MAR: ${{ inputs.mar }}
+          FASE: ${{ inputs.fase }}
+          BALLENA_1: ${{ inputs.ballena_1 }}
+          BALLENA_2: ${{ inputs.ballena_2 }}
+          BALLENA_3: ${{ inputs.ballena_3 }}
+        run: python pesca.py
+
+      - name: Guardar informe MPD
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add pesca-data.json
+          git diff --cached --quiet || git commit -m 'Actualizar informe MPD Pesca del día'
+          git push
