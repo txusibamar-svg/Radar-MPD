@@ -2,8 +2,8 @@ name: MPD Radar - datos intradia
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '7,17,27,37,47,57 13-22 * * 1-5'
+  schedule:   
+  - cron: '9,19,29,39,49,59 13-22 * * 1-5'
 
 permissions:
   contents: read
